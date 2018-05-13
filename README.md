@@ -1,9 +1,9 @@
-OB# hsc_scores
+# hsc_scores
 A simple bot to crawl scores for 2017 Anna univ counselling
 
 The 2017 marks are available at `marks-2017.db` and `marks-2017.csv` as SQLite and csv respectively. I am not responsible for the correctness of the data since it was scraped. Use it at your own discretion.
 
-# Example usage
+### Example usage
 
 ```bash
 ➜  hsc_scores git:(master) ✗ sqlite3 marks-2017.db
