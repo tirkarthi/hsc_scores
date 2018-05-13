@@ -1,19 +1,21 @@
-# hsc_scores
-A simple bot to crawl scores for 2016 Anna univ counselling
+OB# hsc_scores
+A simple bot to crawl scores for 2017 Anna univ counselling
 
-# Installation
+The 2017 marks are available at `marks-2017.db` and `marks-2017.csv` as SQLite and csv respectively. I am not responsible for the correctness of the data since it was scraped. Use it at your own discretion.
 
-* Activate virtualenv
-* `pip install -r requirements.txt`
-* Run the bot as `python bot.py` which dumps each college marks as json of the form collegecode.json
-* Create data using `sqlite3 data` and then run the create table command available as comment in `sql-insert.py` and then run `python sql-insert.py`
+# Example usage
 
-# SQLite database
+```bash
+➜  hsc_scores git:(master) ✗ sqlite3 marks-2017.db
+SQLite version 3.11.0 2016-02-15 17:29:24
+Enter ".help" for usage hints.
+sqlite> .headers on
+sqlite> .mode column
+sqlite> select * from marks where bname="Civil Engineering" limit 1;
 
-The SQLite database is available as `data`. Run `sqlite3 data`. Use `.tables` which gives a single table name that contains all the marks for 2016. Use `.schema <table_name>` to get the schema and the column names are self-documentary.
+bc          bcm         bcode       bname              hd                                                    mbc         oc          sca         sc          st
+----------  ----------  ----------  -----------------  ----------------------------------------------------  ----------  ----------  ----------  ----------  ----------
+163.0       168.25      CE          Civil Engineering  2710 . Karpagam College Of Engineering (AUT)          162.75      170.75      79.75       121.75      94.25
+```
 
-# Todo
-
-* Make the database as excel sheets.
-
-All the best!
+All the best.
